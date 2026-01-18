@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accounting & Bookkeeping Services by Karv & Associates LLP">
+    <title>Accounting & Bookkeeping | Karv & Associates LLP</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans Pro', sans-serif; line-height: 1.8; color: #333; background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 500; }
+        header { padding: 25px 40px; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #2c3e50; text-decoration: none; }
+        .logo span { color: #c9a227; }
+        nav ul { list-style: none; display: flex; gap: 40px; }
+        nav a { color: #555; text-decoration: none; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: #c9a227; }
+        .menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: #2c3e50; }
+        .page-hero { padding: 160px 40px 80px; background: linear-gradient(180deg, #faf9f7 0%, #fff 100%); text-align: center; }
+        .page-hero .label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #c9a227; margin-bottom: 20px; font-weight: 600; }
+        .page-hero h1 { font-size: 48px; color: #2c3e50; margin-bottom: 20px; }
+        .page-hero p { font-size: 20px; color: #666; max-width: 600px; margin: 0 auto; font-weight: 300; }
+        .content { padding: 80px 40px; max-width: 1000px; margin: 0 auto; }
+        .intro { text-align: center; margin-bottom: 60px; }
+        .intro p { font-size: 18px; color: #666; line-height: 1.9; }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 60px; }
+        .service-box { background: #faf9f7; padding: 40px; transition: transform 0.3s; }
+        .service-box:hover { transform: translateY(-3px); }
+        .service-box h3 { font-size: 22px; color: #2c3e50; margin-bottom: 15px; }
+        .service-box p { color: #666; font-size: 15px; line-height: 1.8; }
+        .benefits-section { background: #2c3e50; color: #fff; padding: 80px 40px; margin: 0 -40px; }
+        .benefits-section h2 { text-align: center; color: #fff; margin-bottom: 50px; font-size: 32px; }
+        .benefits-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .benefit { text-align: center; }
+        .benefit-icon { font-size: 40px; margin-bottom: 20px; }
+        .benefit h4 { color: #c9a227; margin-bottom: 10px; font-size: 18px; }
+        .benefit p { color: rgba(255,255,255,0.7); font-size: 14px; }
+        .software-section { padding: 80px 40px; text-align: center; background: #faf9f7; }
+        .software-section h2 { font-size: 32px; color: #2c3e50; margin-bottom: 20px; }
+        .software-section p { color: #666; margin-bottom: 40px; }
+        .software-logos { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
+        .software-item { color: #666; font-size: 16px; font-weight: 600; }
+        .cta-section { text-align: center; padding: 80px 40px; }
+        .cta-section h2 { font-size: 36px; color: #2c3e50; margin-bottom: 20px; }
+        .cta-section p { color: #666; margin-bottom: 30px; font-size: 18px; }
+        .btn { display: inline-block; padding: 16px 45px; background: #2c3e50; color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; transition: all 0.3s; border: 2px solid #2c3e50; }
+        .btn:hover { background: transparent; color: #2c3e50; }
+        footer { background: #2c3e50; color: #fff; padding: 50px 40px; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; }
+        .footer-logo span { color: #c9a227; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: #c9a227; }
+        .footer-copy { color: rgba(255,255,255,0.5); font-size: 13px; }
+        @media (max-width: 768px) {
+            header { padding: 20px; }
+            nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 30px; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            nav ul.active { display: flex; }
+            .menu-btn { display: block; }
+            .page-hero h1 { font-size: 32px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .benefits-section { margin: 0 -25px; padding: 60px 25px; }
+            .benefits-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Karv <span>& Associates LLP</span></a>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="page-hero">
+        <p class="label">Financial Management</p>
+        <h1>Accounting & Bookkeeping</h1>
+        <p>Accurate, timely financial records that keep your business on track and compliant.</p>
+    </section>
+    <section class="content">
+        <div class="intro">
+            <p>Good bookkeeping is the foundation of sound financial management. Our professional accounting services ensure your books are accurate, up-to-date, and ready for decision-making.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3>Bookkeeping</h3>
+                <p>Daily transaction recording, bank reconciliation, and maintaining accurate ledgers using modern accounting software.</p>
+            </div>
+            <div class="service-box">
+                <h3>Financial Statements</h3>
+                <p>Preparation of Profit & Loss statements, Balance Sheets, and Cash Flow statements as per accounting standards.</p>
+            </div>
+            <div class="service-box">
+                <h3>Payroll Processing</h3>
+                <p>Complete payroll management including salary calculation, PF, ESI deductions, and Form 16 generation.</p>
+            </div>
+            <div class="service-box">
+                <h3>Accounts Payable/Receivable</h3>
+                <p>Manage vendor payments and customer collections efficiently to optimize your working capital.</p>
+            </div>
+            <div class="service-box">
+                <h3>MIS Reports</h3>
+                <p>Customized management information reports providing insights for strategic business decisions.</p>
+            </div>
+            <div class="service-box">
+                <h3>Virtual CFO</h3>
+                <p>Part-time CFO services for startups and SMEs needing expert financial guidance without full-time cost.</p>
+            </div>
+        </div>
+    </section>
+    <section class="benefits-section">
+        <h2>Why Outsource Accounting?</h2>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <div class="benefit-icon">💰</div>
+                <h4>Cost Savings</h4>
+                <p>Save up to 60% compared to in-house accounting staff</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">⏰</div>
+                <h4>Save Time</h4>
+                <p>Focus on your core business while we handle the books</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">✓</div>
+                <h4>Accuracy</h4>
+                <p>Professional accountants ensure error-free records</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">📊</div>
+                <h4>Real-time Data</h4>
+                <p>Access your financial data anytime, anywhere</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🔒</div>
+                <h4>Compliance</h4>
+                <p>Stay compliant with all statutory requirements</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">📈</div>
+                <h4>Scalability</h4>
+                <p>Services that grow with your business needs</p>
+            </div>
+        </div>
+    </section>
+    <section class="software-section">
+        <h2>Software We Work With</h2>
+        <p>We are proficient in all major accounting software</p>
+        <div class="software-logos">
+            <span class="software-item">Tally Prime</span>
+            <span class="software-item">QuickBooks</span>
+            <span class="software-item">Zoho Books</span>
+            <span class="software-item">Busy</span>
+            <span class="software-item">SAP</span>
+        </div>
+    </section>
+    <section class="cta-section">
+        <h2>Ready to streamline your accounting?</h2>
+        <p>Get a free consultation and quote for your bookkeeping needs.</p>
+        <a href="../index.html#contact" class="btn">Get Quote</a>
+    </section>
+    <footer>
+        <div class="footer-logo">Karv <span>& Associates LLP</span></div>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="tax-services.html">Tax Services</a>
+        </div>
+        <p class="footer-copy">© 2026 Karv & Associates LLP. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+    </script>
+</body>
+</html>

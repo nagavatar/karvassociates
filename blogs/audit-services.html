@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Audit & Assurance Services by Karv & Associates LLP">
+    <title>Audit & Assurance | Karv & Associates LLP</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans Pro', sans-serif; line-height: 1.8; color: #333; background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 500; }
+        header { padding: 25px 40px; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #2c3e50; text-decoration: none; }
+        .logo span { color: #c9a227; }
+        nav ul { list-style: none; display: flex; gap: 40px; }
+        nav a { color: #555; text-decoration: none; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: #c9a227; }
+        .menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: #2c3e50; }
+        .page-hero { padding: 160px 40px 80px; background: linear-gradient(180deg, #faf9f7 0%, #fff 100%); text-align: center; }
+        .page-hero .label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #c9a227; margin-bottom: 20px; font-weight: 600; }
+        .page-hero h1 { font-size: 48px; color: #2c3e50; margin-bottom: 20px; }
+        .page-hero p { font-size: 20px; color: #666; max-width: 600px; margin: 0 auto; font-weight: 300; }
+        .content { padding: 80px 40px; max-width: 1000px; margin: 0 auto; }
+        .intro { text-align: center; margin-bottom: 60px; }
+        .intro p { font-size: 18px; color: #666; line-height: 1.9; }
+        .services-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 60px; }
+        .service-item { background: #faf9f7; padding: 40px; transition: transform 0.3s; }
+        .service-item:hover { transform: translateY(-3px); }
+        .service-item h3 { font-size: 22px; color: #2c3e50; margin-bottom: 15px; }
+        .service-item p { color: #666; font-size: 15px; line-height: 1.8; }
+        .process-section { background: #2c3e50; color: #fff; padding: 80px 40px; margin: 0 -40px; }
+        .process-section h2 { text-align: center; color: #fff; margin-bottom: 50px; font-size: 32px; }
+        .process-steps { max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; position: relative; }
+        .process-steps::before { content: ''; position: absolute; top: 30px; left: 60px; right: 60px; height: 2px; background: rgba(255,255,255,0.2); }
+        .step { text-align: center; flex: 1; position: relative; }
+        .step-number { width: 60px; height: 60px; background: #c9a227; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 600; margin: 0 auto 20px; position: relative; z-index: 1; }
+        .step h4 { color: #fff; margin-bottom: 10px; font-size: 18px; }
+        .step p { color: rgba(255,255,255,0.7); font-size: 14px; }
+        .cta-section { text-align: center; padding: 80px 40px; background: #faf9f7; }
+        .cta-section h2 { font-size: 36px; color: #2c3e50; margin-bottom: 20px; }
+        .cta-section p { color: #666; margin-bottom: 30px; font-size: 18px; }
+        .btn { display: inline-block; padding: 16px 45px; background: #2c3e50; color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; transition: all 0.3s; border: 2px solid #2c3e50; }
+        .btn:hover { background: transparent; color: #2c3e50; }
+        footer { background: #2c3e50; color: #fff; padding: 50px 40px; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; }
+        .footer-logo span { color: #c9a227; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: #c9a227; }
+        .footer-copy { color: rgba(255,255,255,0.5); font-size: 13px; }
+        @media (max-width: 768px) {
+            header { padding: 20px; }
+            nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 30px; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            nav ul.active { display: flex; }
+            .menu-btn { display: block; }
+            .page-hero h1 { font-size: 32px; }
+            .services-list { grid-template-columns: 1fr; }
+            .process-section { margin: 0 -25px; padding: 60px 25px; }
+            .process-steps { flex-direction: column; gap: 40px; }
+            .process-steps::before { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Karv <span>& Associates LLP</span></a>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="page-hero">
+        <p class="label">Assurance & Compliance</p>
+        <h1>Audit & Assurance</h1>
+        <p>Independent, thorough audits conducted with precision, integrity, and complete confidentiality.</p>
+    </section>
+    <section class="content">
+        <div class="intro">
+            <p>A well-conducted audit builds stakeholder confidence and ensures regulatory compliance. Our experienced audit team brings objectivity, expertise, and attention to detail to every engagement.</p>
+        </div>
+        <div class="services-list">
+            <div class="service-item">
+                <h3>Statutory Audit</h3>
+                <p>Mandatory annual audits under the Companies Act, 2013. We verify financial statements and compliance with accounting standards.</p>
+            </div>
+            <div class="service-item">
+                <h3>Tax Audit (Sec 44AB)</h3>
+                <p>Required for businesses with turnover exceeding prescribed limits. Form 3CA/3CB and Form 3CD preparation.</p>
+            </div>
+            <div class="service-item">
+                <h3>Internal Audit</h3>
+                <p>Evaluate internal controls, risk management, and operational efficiency with actionable recommendations.</p>
+            </div>
+            <div class="service-item">
+                <h3>GST Audit</h3>
+                <p>Comprehensive review of GST compliance, ITC claims, and reconciliations to ensure accuracy.</p>
+            </div>
+            <div class="service-item">
+                <h3>Bank Audit</h3>
+                <p>Specialized audits of banking institutions including branch audits and concurrent audits per RBI guidelines.</p>
+            </div>
+            <div class="service-item">
+                <h3>Due Diligence</h3>
+                <p>Financial and legal due diligence for mergers, acquisitions, and investments.</p>
+            </div>
+        </div>
+    </section>
+    <section class="process-section">
+        <h2>Our Audit Process</h2>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>Planning</h4>
+                <p>Understand business & scope</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>Fieldwork</h4>
+                <p>Gather evidence & test</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>Review</h4>
+                <p>Analyze findings</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h4>Report</h4>
+                <p>Deliver audit report</p>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <h2>Need an audit partner?</h2>
+        <p>Let's discuss your audit requirements and how we can help.</p>
+        <a href="../index.html#contact" class="btn">Get in Touch</a>
+    </section>
+    <footer>
+        <div class="footer-logo">Karv <span>& Associates LLP</span></div>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="tax-services.html">Tax Services</a>
+        </div>
+        <p class="footer-copy">© 2026 Karv & Associates LLP. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+    </script>
+</body>
+</html>
