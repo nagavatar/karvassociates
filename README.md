@@ -1,6 +1,6 @@
-# Karv & Associates - Chartered Accountants Website
+# K A R V & Associates - Chartered Accountants Website
 
-A professional website for **Karv & Associates**, a fictional Chartered Accountancy firm based in India offering comprehensive financial services.
+A professional website for **K A R V & Associates**, a fictional Chartered Accountancy firm based in India offering comprehensive financial services.
 
 ## Services Offered
 
@@ -29,7 +29,7 @@ A professional website for **Karv & Associates**, a fictional Chartered Accounta
 
 ## Contact (Fictional)
 
-Karv & Associates  
+K A R V & Associates  
 123, Financial District  
 Bandra Kurla Complex  
 Mumbai - 400051, Maharashtra
