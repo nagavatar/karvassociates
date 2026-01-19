@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
-# Karv & Associates LLP - Chartered Accountants in Noida, Delhi NCR
-Sitemap: https://karvassociates.in/sitemap.xml
+# K A R V & Associates LLP - Chartered Accountants in Noida, Delhi NCR
+# Google-compliant sitemap with 15,000+ SEO-optimized URLs
+Sitemap: https://nagavatar.github.io/karvassociates/sitemap.xml
