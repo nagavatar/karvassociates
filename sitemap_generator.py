@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Google-Compliant Sitemap Generator for K A R V & Associates LLP
-Only includes REAL existing pages - Google compliant!
+Sitemap Generator for K A R V & Associates LLP
+Generates SEO URLs for CA services across India
 """
 
 import os
@@ -13,160 +13,193 @@ BASE_URL = "https://nagavatar.github.io/karvassociates"
 SITEMAP_DIR = "sitemaps"
 TODAY = datetime.now().strftime("%Y-%m-%d")
 
-# Create sitemaps directory
 os.makedirs(SITEMAP_DIR, exist_ok=True)
 
-# ================= SCAN ACTUAL EXISTING PAGES =================
+# ================= EXISTING PAGES =================
 def get_existing_pages():
-    """Scan workspace for actual HTML files that exist"""
     pages = []
-    
-    # Main page - highest priority
-    pages.append({
-        "loc": f"{BASE_URL}/",
-        "priority": "1.0",
-        "changefreq": "weekly",
-        "description": "Homepage"
-    })
-    
-    # Index.html
+    pages.append({"loc": f"{BASE_URL}/", "priority": "1.0", "changefreq": "weekly"})
     if os.path.exists("index.html"):
-        pages.append({
-            "loc": f"{BASE_URL}/index.html",
-            "priority": "1.0",
-            "changefreq": "weekly",
-            "description": "Homepage (index.html)"
-        })
-    
-    # Service pages in /pages/
-    service_pages = glob.glob("pages/*.html")
-    for page in sorted(service_pages):
-        filename = os.path.basename(page)
-        pages.append({
-            "loc": f"{BASE_URL}/pages/{filename}",
-            "priority": "0.9",
-            "changefreq": "monthly",
-            "description": f"Service: {filename}"
-        })
-    
-    # Blog/SEO pages in /blogs/
-    blog_pages = glob.glob("blogs/*.html")
-    for page in sorted(blog_pages):
-        filename = os.path.basename(page)
-        pages.append({
-            "loc": f"{BASE_URL}/blogs/{filename}",
-            "priority": "0.8",
-            "changefreq": "monthly",
-            "description": f"Blog: {filename}"
-        })
-    
-    # Links page
+        pages.append({"loc": f"{BASE_URL}/index.html", "priority": "1.0", "changefreq": "weekly"})
+    for page in sorted(glob.glob("pages/*.html")):
+        pages.append({"loc": f"{BASE_URL}/pages/{os.path.basename(page)}", "priority": "0.9", "changefreq": "monthly"})
+    for page in sorted(glob.glob("blogs/*.html")):
+        pages.append({"loc": f"{BASE_URL}/blogs/{os.path.basename(page)}", "priority": "0.8", "changefreq": "monthly"})
     if os.path.exists("links.html"):
-        pages.append({
-            "loc": f"{BASE_URL}/links.html",
-            "priority": "0.6",
-            "changefreq": "monthly",
-            "description": "Links page"
-        })
-    
+        pages.append({"loc": f"{BASE_URL}/links.html", "priority": "0.6", "changefreq": "monthly"})
     return pages
 
-# ================= XML GENERATION =================
-def escape_xml(text):
-    """Escape special XML characters"""
-    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+# ================= CA SERVICES =================
+CA_SERVICES = [
+    # GST Services
+    "gst-registration", "gst-return-filing", "gstr-1-filing", "gstr-3b-filing",
+    "gst-annual-return", "gst-audit", "gst-refund", "gst-consultant", "gst-compliance",
+    "gst-e-way-bill", "gst-input-tax-credit", "gst-advisory", "gst-litigation",
+    # Income Tax
+    "income-tax-filing", "itr-filing", "itr-1-filing", "itr-2-filing", "itr-3-filing",
+    "itr-4-filing", "itr-5-filing", "itr-6-filing", "tax-planning", "tax-consultant",
+    "tax-audit", "tds-return-filing", "tds-compliance", "advance-tax-payment",
+    "capital-gains-tax", "nri-tax-filing", "salary-tax-planning",
+    # Company Registration
+    "company-registration", "private-limited-company-registration", "llp-registration",
+    "opc-registration", "partnership-firm-registration", "startup-registration",
+    "public-limited-company", "section-8-company", "nidhi-company-registration",
+    # Business Registrations
+    "msme-registration", "udyam-registration", "fssai-registration", "fssai-license",
+    "trademark-registration", "import-export-code", "iec-registration",
+    "epf-registration", "esi-registration", "professional-tax-registration",
+    "shop-act-license", "trade-license", "drug-license", "iso-certification",
+    # Audit Services
+    "statutory-audit", "internal-audit", "stock-audit", "forensic-audit",
+    "compliance-audit", "concurrent-audit", "management-audit", "bank-audit",
+    "trust-audit", "ngo-audit", "cooperative-society-audit",
+    # Accounting
+    "bookkeeping-services", "accounting-services", "payroll-services", "virtual-cfo",
+    "accounts-outsourcing", "financial-reporting", "cash-flow-management",
+    "bank-reconciliation", "inventory-accounting",
+    # Compliance
+    "roc-compliance", "annual-compliance", "director-kyc", "company-closure",
+    "llp-closure", "strike-off-company", "din-registration", "dsc-registration",
+    "share-transfer", "director-appointment", "registered-office-change",
+    # General CA
+    "chartered-accountant", "ca-firm", "ca-services", "best-ca", "top-ca",
+    "ca-consultant", "accounting-firm", "tax-firm", "audit-firm"
+]
 
-def write_sitemap(filename, urls):
-    """Write a Google-compliant sitemap XML file"""
-    filepath = os.path.join(SITEMAP_DIR, filename)
+# ================= INDIAN CITIES =================
+CITIES = [
+    # Delhi NCR - Primary Focus
+    "noida", "delhi", "new-delhi", "ghaziabad", "gurugram", "gurgaon", "faridabad",
+    "greater-noida", "indirapuram", "vaishali", "vasundhara", "crossing-republik",
+    "noida-extension", "sector-62-noida", "sector-63-noida", "sector-18-noida",
+    "raj-nagar-extension", "kaushambi", "sahibabad",
+    # UP Cities
+    "lucknow", "kanpur", "agra", "varanasi", "prayagraj", "allahabad", "meerut",
+    "aligarh", "bareilly", "moradabad", "gorakhpur", "mathura", "firozabad",
+    "muzaffarnagar", "saharanpur", "jhansi", "etawah", "rampur",
+    # Uttarakhand
+    "dehradun", "haridwar", "rishikesh", "roorkee", "haldwani", "nainital",
+    # Haryana
+    "panipat", "karnal", "rohtak", "hisar", "sonipat", "ambala", "yamunanagar",
+    "bhiwani", "sirsa", "jind", "rewari", "palwal",
+    # Punjab
+    "chandigarh", "ludhiana", "amritsar", "jalandhar", "patiala", "bathinda", "mohali",
+    "pathankot", "hoshiarpur", "batala", "moga", "abohar",
+    # Rajasthan
+    "jaipur", "jodhpur", "udaipur", "kota", "ajmer", "bikaner", "alwar",
+    "bharatpur", "sikar", "bhilwara", "pali", "tonk",
+    # Major Metros
+    "mumbai", "bangalore", "bengaluru", "chennai", "kolkata", "hyderabad", "pune", "ahmedabad",
+    # Maharashtra
+    "nagpur", "nashik", "thane", "navi-mumbai", "aurangabad", "solapur", "kolhapur",
+    "sangli", "satara", "ratnagiri", "ahmednagar",
+    # Gujarat
+    "surat", "vadodara", "rajkot", "bhavnagar", "jamnagar", "junagadh", "gandhinagar",
+    "anand", "nadiad", "bharuch", "vapi", "navsari",
+    # South India
+    "coimbatore", "madurai", "tiruchirappalli", "salem", "tirunelveli", "erode", "vellore",
+    "kochi", "thiruvananthapuram", "kozhikode", "thrissur", "kollam",
+    "visakhapatnam", "vijayawada", "guntur", "nellore", "tirupati", "kakinada",
+    "mysore", "mangalore", "hubli", "belgaum", "gulbarga", "davangere",
+    # East India
+    "patna", "gaya", "bhagalpur", "muzaffarpur", "ranchi", "jamshedpur", "dhanbad",
+    "bokaro", "bhubaneswar", "cuttack", "rourkela", "guwahati", "silchar",
+    # Central India
+    "bhopal", "indore", "jabalpur", "gwalior", "ujjain", "raipur", "bhilai", "bilaspur"
+]
+
+# ================= GENERATE SEO URLS =================
+def generate_seo_urls(limit=15000):
+    urls = []
     
+    # Pattern 1: service-in-city
+    for service in CA_SERVICES:
+        for city in CITIES:
+            urls.append({"loc": f"{BASE_URL}/services/{service}-in-{city}", "priority": "0.6", "changefreq": "monthly"})
+            if len(urls) >= limit: return urls
+    
+    # Pattern 2: best-service-city
+    for service in CA_SERVICES[:25]:
+        for city in CITIES[:30]:
+            urls.append({"loc": f"{BASE_URL}/services/best-{service}-{city}", "priority": "0.5", "changefreq": "monthly"})
+            if len(urls) >= limit: return urls
+    
+    # Pattern 3: service-near-me-city
+    for service in CA_SERVICES[:20]:
+        for city in CITIES[:25]:
+            urls.append({"loc": f"{BASE_URL}/services/{service}-near-me-{city}", "priority": "0.5", "changefreq": "monthly"})
+            if len(urls) >= limit: return urls
+    
+    # Pattern 4: top-service-city
+    for service in CA_SERVICES[:20]:
+        for city in CITIES[:25]:
+            urls.append({"loc": f"{BASE_URL}/services/top-{service}-{city}", "priority": "0.5", "changefreq": "monthly"})
+            if len(urls) >= limit: return urls
+    
+    # Pattern 5: affordable-service-city
+    for service in CA_SERVICES[:15]:
+        for city in CITIES[:20]:
+            urls.append({"loc": f"{BASE_URL}/services/affordable-{service}-{city}", "priority": "0.4", "changefreq": "monthly"})
+            if len(urls) >= limit: return urls
+    
+    return urls
+
+# ================= XML WRITER =================
+def write_sitemap(filepath, urls):
     with open(filepath, "w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-        f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n')
-        f.write('        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n')
-        f.write('        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9\n')
-        f.write('              http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n')
-        f.write(f'<!-- K A R V & Associates LLP - Chartered Accountants -->\n')
-        f.write(f'<!-- Generated: {TODAY} | Total URLs: {len(urls)} -->\n\n')
-        
-        for url_data in urls:
-            loc = escape_xml(url_data["loc"])
-            priority = url_data.get("priority", "0.5")
-            changefreq = url_data.get("changefreq", "monthly")
-            
-            f.write("  <url>\n")
-            f.write(f"    <loc>{loc}</loc>\n")
-            f.write(f"    <lastmod>{TODAY}</lastmod>\n")
-            f.write(f"    <changefreq>{changefreq}</changefreq>\n")
-            f.write(f"    <priority>{priority}</priority>\n")
-            f.write("  </url>\n")
-        
-        f.write("</urlset>\n")
-    
-    return filepath
+        f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        for u in urls:
+            f.write(f'  <url>\n    <loc>{u["loc"]}</loc>\n    <lastmod>{TODAY}</lastmod>\n')
+            f.write(f'    <changefreq>{u["changefreq"]}</changefreq>\n    <priority>{u["priority"]}</priority>\n  </url>\n')
+        f.write('</urlset>\n')
 
-def write_main_sitemap(urls):
-    """Write the main sitemap.xml in root directory"""
+def write_sitemap_index(sitemaps):
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-        f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n')
-        f.write('        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n')
-        f.write('        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9\n')
-        f.write('              http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n')
-        f.write(f'<!-- K A R V & Associates LLP - Chartered Accountants in Noida, Delhi NCR -->\n')
-        f.write(f'<!-- Generated: {TODAY} | Total URLs: {len(urls)} -->\n')
-        f.write(f'<!-- All URLs verified to exist (200 OK) -->\n\n')
-        
-        for url_data in urls:
-            loc = escape_xml(url_data["loc"])
-            priority = url_data.get("priority", "0.5")
-            changefreq = url_data.get("changefreq", "monthly")
-            
-            f.write("  <url>\n")
-            f.write(f"    <loc>{loc}</loc>\n")
-            f.write(f"    <lastmod>{TODAY}</lastmod>\n")
-            f.write(f"    <changefreq>{changefreq}</changefreq>\n")
-            f.write(f"    <priority>{priority}</priority>\n")
-            f.write("  </url>\n")
-        
-        f.write("</urlset>\n")
+        f.write('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+        f.write(f'<!-- K A R V & Associates LLP - {len(sitemaps)} sitemaps -->\n')
+        for sm in sitemaps:
+            f.write(f'  <sitemap>\n    <loc>{BASE_URL}/sitemaps/{sm}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </sitemap>\n')
+        f.write('</sitemapindex>\n')
 
-# ================= MAIN EXECUTION =================
+# ================= MAIN =================
 def main():
     print("=" * 60)
-    print("K A R V & Associates LLP - Sitemap Generator")
-    print("Google-Compliant: Only REAL existing pages")
+    print("K A R V & Associates - Sitemap Generator")
     print("=" * 60)
     
-    # Scan existing pages
-    print("\n📁 Scanning existing pages...")
-    pages = get_existing_pages()
+    # Get real pages
+    existing = get_existing_pages()
+    print(f"\n✓ Found {len(existing)} real pages")
     
-    print(f"\n📊 Found {len(pages)} real pages:")
-    for page in pages:
-        print(f"   ✓ {page['description']}")
+    # Generate SEO URLs
+    seo_urls = generate_seo_urls(15000)
+    print(f"✓ Generated {len(seo_urls)} SEO URLs")
     
-    # Write sitemap in sitemaps folder
-    print("\n📝 Generating sitemaps...")
-    write_sitemap("sitemap-main.xml", pages)
-    print(f"   ✅ Created sitemaps/sitemap-main.xml")
+    # Write sitemaps
+    sitemaps = []
     
-    # Write main sitemap.xml in root
-    write_main_sitemap(pages)
-    print(f"   ✅ Created sitemap.xml (root)")
+    # Sitemap 1: Real pages
+    write_sitemap(f"{SITEMAP_DIR}/sitemap-main.xml", existing)
+    sitemaps.append("sitemap-main.xml")
+    print(f"✅ sitemap-main.xml ({len(existing)} URLs)")
     
-    # Summary
-    print("\n" + "=" * 60)
-    print("✅ SITEMAP GENERATION COMPLETE!")
-    print("=" * 60)
-    print(f"   Total Real Pages: {len(pages)}")
-    print(f"   Sitemap: sitemap.xml")
-    print("\n📌 Submit to Google Search Console:")
-    print(f"   {BASE_URL}/sitemap.xml")
-    print("\n💡 To add more pages to sitemap:")
-    print("   1. Create HTML files in /pages/ or /blogs/")
-    print("   2. Run: python3 sitemap_generator.py")
-    print("=" * 60)
+    # Split SEO URLs into chunks of 10,000
+    chunk_size = 10000
+    for i, start in enumerate(range(0, len(seo_urls), chunk_size)):
+        chunk = seo_urls[start:start + chunk_size]
+        filename = f"sitemap-seo-{i+1}.xml"
+        write_sitemap(f"{SITEMAP_DIR}/{filename}", chunk)
+        sitemaps.append(filename)
+        print(f"✅ {filename} ({len(chunk)} URLs)")
+    
+    # Write index
+    write_sitemap_index(sitemaps)
+    print(f"\n✅ sitemap.xml (index with {len(sitemaps)} sitemaps)")
+    
+    total = len(existing) + len(seo_urls)
+    print(f"\n{'='*60}\n📊 TOTAL: {total} URLs across {len(sitemaps)} sitemaps\n{'='*60}")
 
 if __name__ == "__main__":
     main()
