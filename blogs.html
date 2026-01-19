@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert insights on Income Tax, GST, Company Registration & Tax Planning in India. Read our latest blogs from K A R V & Associates - Chartered Accountants in Noida, Delhi NCR.">
+    <meta name="keywords" content="tax blog india, ITR filing guide, GST registration blog, CA firm blog, income tax tips, tax planning india">
+    <title>Tax & Finance Blogs | K A R V & Associates LLP - Chartered Accountants</title>
+    <link rel="icon" href="favicon.jpeg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans Pro', sans-serif; line-height: 1.8; color: #333; background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 500; }
+        
+        /* Header */
+        header { padding: 25px 40px; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-wrapper { display: flex; flex-direction: column; align-items: flex-start; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #2c3e50; text-decoration: none; line-height: 1.2; }
+        .logo span { color: #c9a227; }
+        .logo-subtitle { font-size: 11px; color: #666; letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; padding-top: 5px; border-top: 1px solid #c9a227; }
+        nav ul { list-style: none; display: flex; gap: 35px; }
+        nav a { color: #555; text-decoration: none; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #c9a227; }
+        .menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: #2c3e50; }
+
+        /* Hero Banner */
+        .blog-hero { background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); padding: 160px 40px 80px; text-align: center; color: #fff; }
+        .blog-hero h1 { font-size: 48px; margin-bottom: 15px; }
+        .blog-hero p { font-size: 18px; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        /* Blog Grid */
+        .blog-section { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .blog-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .blog-card-image { height: 200px; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); display: flex; align-items: center; justify-content: center; }
+        .blog-card-image span { font-size: 60px; }
+        .blog-card-content { padding: 30px; }
+        .blog-card-category { display: inline-block; background: #c9a227; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .blog-card h3 { font-size: 22px; margin-bottom: 15px; color: #2c3e50; line-height: 1.4; }
+        .blog-card p { color: #666; font-size: 15px; margin-bottom: 20px; }
+        .blog-card-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid #eee; }
+        .blog-card-meta span { font-size: 13px; color: #999; }
+        .read-more { color: #c9a227; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.3s; }
+        .read-more:hover { gap: 10px; }
+
+        /* Footer */
+        footer { background: #2c3e50; color: #fff; text-align: center; padding: 60px 40px; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 5px; }
+        .footer-logo span { color: #c9a227; }
+        .footer-subtitle { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; margin-bottom: 30px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 30px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: #c9a227; }
+        .footer-copy { font-size: 13px; opacity: 0.5; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 15px; }
+            nav ul.active { display: flex; }
+            .menu-btn { display: block; }
+            .blog-hero { padding: 140px 20px 60px; }
+            .blog-hero h1 { font-size: 32px; }
+            .blog-section { padding: 50px 20px; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo">K A R V <span>& Associates LLP</span></a>
+                <span class="logo-subtitle">Chartered Accountants</span>
+            </div>
+            <nav>
+                <button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="pages/team.html">Team</a></li>
+                    <li><a href="blogs.html" class="active">Blogs</a></li>
+                    <li><a href="pages/gst-calculator.html">GST Calculator</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="blog-hero">
+        <h1>Tax & Finance Insights</h1>
+        <p>Expert guidance on Income Tax, GST, Company Registration & Financial Planning for individuals and businesses in India</p>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-section">
+        <div class="blog-grid">
+            <!-- Blog 1 -->
+            <article class="blog-card">
+                <div class="blog-card-image"><span>📋</span></div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">Income Tax</span>
+                    <h3>Complete Guide to ITR Filing in India 2025-26</h3>
+                    <p>Learn who should file ITR, which form to use, documents required, and step-by-step filing process for salaried, business & freelancers.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 Jan 15, 2026 · 8 min read</span>
+                        <a href="blogs/itr-filing-guide-india.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog 2 -->
+            <article class="blog-card">
+                <div class="blog-card-image"><span>🧾</span></div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">GST</span>
+                    <h3>GST Registration: Who Needs It & How to Apply</h3>
+                    <p>Complete guide to GST registration in India - eligibility criteria, documents required, online application process & common mistakes to avoid.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 Jan 12, 2026 · 6 min read</span>
+                        <a href="blogs/gst-registration-guide-india.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog 3 -->
+            <article class="blog-card">
+                <div class="blog-card-image"><span>🏢</span></div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">Business</span>
+                    <h3>Private Limited vs LLP vs OPC: Which is Best for You?</h3>
+                    <p>Confused about company structure? Compare compliance, taxation, liability & costs of Private Limited, LLP and One Person Company in India.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 Jan 10, 2026 · 7 min read</span>
+                        <a href="blogs/pvt-ltd-vs-llp-vs-opc.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog 4 -->
+            <article class="blog-card">
+                <div class="blog-card-image"><span>💰</span></div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">Tax Planning</span>
+                    <h3>Top 10 Tax Saving Tips for Salaried Employees in India</h3>
+                    <p>Maximize your tax savings with 80C, 80D, HRA exemption, NPS benefits and more. Smart tax planning strategies for FY 2025-26.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 Jan 8, 2026 · 10 min read</span>
+                        <a href="blogs/tax-saving-tips-salaried.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog 5 -->
+            <article class="blog-card">
+                <div class="blog-card-image"><span>📊</span></div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">GST</span>
+                    <h3>GSTR-1, GSTR-3B & Annual Return: Complete Filing Guide</h3>
+                    <p>Understand GST return types, due dates, late fees & step-by-step filing process. Avoid penalties with our comprehensive GST guide.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 Jan 5, 2026 · 9 min read</span>
+                        <a href="blogs/gst-return-filing-guide.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog 6 -->
+            <article class="blog-card">
+                <div class="blog-card-image"><span>🚀</span></div>
+                <div class="blog-card-content">
+                    <span class="blog-card-category">Startups</span>
+                    <h3>Startup India Registration: Benefits, Eligibility & Process</h3>
+                    <p>Complete guide to DPIIT recognition, tax exemptions, funding support & compliance requirements for startups in India.</p>
+                    <div class="blog-card-meta">
+                        <span>📅 Jan 2, 2026 · 8 min read</span>
+                        <a href="blogs/startup-india-registration-guide.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">K A R V <span>& Associates LLP</span></div>
+        <div class="footer-subtitle">Chartered Accountants</div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="pages/team.html">Team</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="pages/gst-calculator.html">GST Calculator</a>
+            <a href="index.html#contact">Contact Us</a>
+        </div>
+        <p class="footer-copy">© 2026 K A R V & Associates LLP. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

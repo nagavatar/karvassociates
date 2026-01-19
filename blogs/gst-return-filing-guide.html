@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete GST return filing guide for India 2025-26. Learn about GSTR-1, GSTR-3B, annual returns, due dates, penalties and step-by-step filing process.">
+    <meta name="keywords" content="GST return filing, GSTR-1, GSTR-3B, GST annual return, GST due dates India, GST filing guide">
+    <title>Complete Guide to GST Return Filing in India | K A R V & Associates</title>
+    <link rel="icon" href="../favicon.jpeg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans Pro', sans-serif; line-height: 1.8; color: #333; background: #fff; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 500; }
+        header { padding: 25px 40px; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(255,255,255,0.98); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-wrapper { display: flex; flex-direction: column; align-items: flex-start; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #2c3e50; text-decoration: none; line-height: 1.2; }
+        .logo span { color: #c9a227; }
+        .logo-subtitle { font-size: 11px; color: #666; letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; padding-top: 5px; border-top: 1px solid #c9a227; }
+        nav ul { list-style: none; display: flex; gap: 35px; }
+        nav a { color: #555; text-decoration: none; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: #c9a227; }
+        .menu-btn { display: none; background: none; border: none; font-size: 28px; cursor: pointer; color: #2c3e50; }
+        .blog-header { background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); padding: 160px 40px 80px; color: #fff; }
+        .blog-header-content { max-width: 800px; margin: 0 auto; }
+        .blog-category { display: inline-block; background: #c9a227; color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+        .blog-header h1 { font-size: 42px; margin-bottom: 20px; line-height: 1.3; }
+        .blog-meta { display: flex; gap: 30px; font-size: 14px; opacity: 0.8; }
+        .blog-content { max-width: 800px; margin: 0 auto; padding: 60px 40px; }
+        .blog-content h2 { font-size: 28px; color: #2c3e50; margin: 40px 0 20px; padding-top: 20px; border-top: 1px solid #eee; }
+        .blog-content h2:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+        .blog-content h3 { font-size: 22px; color: #2c3e50; margin: 30px 0 15px; }
+        .blog-content p { margin-bottom: 20px; font-size: 17px; color: #444; }
+        .blog-content ul, .blog-content ol { margin: 20px 0; padding-left: 30px; }
+        .blog-content li { margin-bottom: 12px; font-size: 17px; }
+        .highlight-box { background: #f8f9fa; border-left: 4px solid #c9a227; padding: 25px 30px; margin: 30px 0; border-radius: 0 8px 8px 0; }
+        .highlight-box h4 { color: #2c3e50; margin-bottom: 15px; font-size: 18px; }
+        .return-card { background: #fff; border: 2px solid #e0e0e0; border-radius: 12px; padding: 25px; margin: 25px 0; }
+        .return-card:hover { border-color: #c9a227; }
+        .return-card h3 { color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .return-badge { display: inline-block; background: #2c3e50; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .due-date-tag { display: inline-block; background: #e74c3c; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-left: 10px; }
+        .table-container { overflow-x: auto; margin: 30px 0; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #2c3e50; color: #fff; font-weight: 600; }
+        tr:hover { background: #f8f9fa; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px 25px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .warning-box h4 { color: #856404; margin-bottom: 10px; }
+        .success-box { background: #d4edda; border-left: 4px solid #28a745; padding: 20px 25px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .success-box h4 { color: #155724; margin-bottom: 10px; }
+        .step-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
+        .step-list li { counter-increment: step-counter; padding-left: 60px; position: relative; margin-bottom: 25px; }
+        .step-list li::before { content: counter(step-counter); position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: #c9a227; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+        .faq-section { background: #f8f9fa; padding: 60px 40px; margin-top: 40px; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-section h2 { text-align: center; margin-bottom: 40px; font-size: 32px; color: #2c3e50; }
+        .faq-item { background: #fff; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .faq-question { padding: 20px 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #2c3e50; }
+        .faq-question:hover { color: #c9a227; }
+        .faq-answer { padding: 0 25px 20px; color: #666; display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .faq-icon { transition: transform 0.3s; font-size: 20px; }
+        .cta-box { background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); color: #fff; padding: 50px; border-radius: 12px; text-align: center; margin: 50px 0; }
+        .cta-box h3 { font-size: 28px; margin-bottom: 15px; }
+        .cta-box p { opacity: 0.9; margin-bottom: 25px; }
+        .cta-btn { display: inline-block; background: #c9a227; color: #fff; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .cta-btn:hover { background: #b08a1f; }
+        footer { background: #2c3e50; color: #fff; text-align: center; padding: 60px 40px; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 5px; }
+        .footer-logo span { color: #c9a227; }
+        .footer-subtitle { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; margin-bottom: 30px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 30px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .footer-links a:hover { color: #c9a227; }
+        .footer-copy { font-size: 13px; opacity: 0.5; }
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 15px; }
+            nav ul.active { display: flex; }
+            .menu-btn { display: block; }
+            .blog-header { padding: 140px 20px 60px; }
+            .blog-header h1 { font-size: 28px; }
+            .blog-content { padding: 40px 20px; }
+            .blog-meta { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo-wrapper">
+                <a href="../index.html" class="logo">K A R V <span>& Associates LLP</span></a>
+                <span class="logo-subtitle">Chartered Accountants</span>
+            </div>
+            <nav>
+                <button class="menu-btn" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About Us</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../pages/team.html">Team</a></li>
+                    <li><a href="../blogs.html">Blogs</a></li>
+                    <li><a href="../pages/gst-calculator.html">GST Calculator</a></li>
+                    <li><a href="../index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-header">
+        <div class="blog-header-content">
+            <span class="blog-category">GST Compliance</span>
+            <h1>Complete Guide to GST Return Filing in India</h1>
+            <div class="blog-meta">
+                <span>📅 January 6, 2026</span>
+                <span>⏱️ 12 min read</span>
+                <span>✍️ K A R V & Associates</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="blog-content">
+        <p>GST return filing is a mandatory compliance for all registered businesses in India. Understanding which returns to file, their due dates, and the filing process can save you from penalties and interest. Here's everything you need to know.</p>
+
+        <div class="highlight-box">
+            <h4>📊 GST Returns at a Glance</h4>
+            <p>Regular taxpayers must file <strong>GSTR-1</strong> (outward supplies) + <strong>GSTR-3B</strong> (summary return) monthly/quarterly. Annual return <strong>GSTR-9</strong> is due by December 31st of the next financial year.</p>
+        </div>
+
+        <h2>Types of GST Returns</h2>
+
+        <div class="return-card">
+            <h3><span class="return-badge">GSTR-1</span> Outward Supplies Return</h3>
+            <p><strong>Who files:</strong> All registered taxpayers (except composition dealers)</p>
+            <p><strong>What to report:</strong> All sales/outward supplies made during the period</p>
+            <p><strong>Due Date:</strong></p>
+            <ul>
+                <li><strong>Monthly filers (turnover > ₹5 Cr):</strong> 11th of next month</li>
+                <li><strong>Quarterly filers (QRMP scheme):</strong> 13th of month after quarter</li>
+            </ul>
+            <p><strong>Key Details to Report:</strong></p>
+            <ul>
+                <li>B2B invoices (to registered businesses) - invoice-wise</li>
+                <li>B2C large (> ₹2.5 lakh inter-state) - invoice-wise</li>
+                <li>B2C small - consolidated state-wise</li>
+                <li>Credit/Debit notes issued</li>
+                <li>Export invoices</li>
+                <li>Nil-rated and exempted supplies</li>
+            </ul>
+        </div>
+
+        <div class="return-card">
+            <h3><span class="return-badge">GSTR-3B</span> Summary Return</h3>
+            <p><strong>Who files:</strong> All regular taxpayers</p>
+            <p><strong>What to report:</strong> Summary of outward supplies, ITC claimed, tax payable</p>
+            <p><strong>Due Date:</strong></p>
+            <ul>
+                <li><strong>Monthly filers:</strong> 20th of next month</li>
+                <li><strong>Quarterly filers (QRMP):</strong> 22nd/24th of month after quarter</li>
+            </ul>
+            <p><strong>Sections in GSTR-3B:</strong></p>
+            <ul>
+                <li>3.1 - Outward supplies and inward supplies (RCM)</li>
+                <li>3.2 - Inter-state supplies to unregistered persons</li>
+                <li>4 - Eligible ITC</li>
+                <li>5 - Exempt, nil-rated, and non-GST supplies</li>
+                <li>6.1 - Payment of tax</li>
+            </ul>
+        </div>
+
+        <div class="return-card">
+            <h3><span class="return-badge">GSTR-9</span> Annual Return</h3>
+            <p><strong>Who files:</strong> Taxpayers with turnover > ₹2 crore (mandatory)</p>
+            <p><strong>Due Date:</strong> December 31st of next financial year</p>
+            <p><strong>What it contains:</strong></p>
+            <ul>
+                <li>Consolidated details of GSTR-1 and GSTR-3B</li>
+                <li>HSN-wise summary of supplies</li>
+                <li>ITC availed and reversed</li>
+                <li>Tax paid during the year</li>
+                <li>Demands and refunds</li>
+            </ul>
+        </div>
+
+        <div class="return-card">
+            <h3><span class="return-badge">GSTR-9C</span> Reconciliation Statement</h3>
+            <p><strong>Who files:</strong> Taxpayers with turnover > ₹5 crore</p>
+            <p><strong>Due Date:</strong> December 31st (along with GSTR-9)</p>
+            <p><strong>What it requires:</strong></p>
+            <ul>
+                <li>Reconciliation between books and GST returns</li>
+                <li>Certification by CA (if turnover > ₹5 Cr)</li>
+                <li>Self-certification allowed for turnover ₹2-5 Cr</li>
+            </ul>
+        </div>
+
+        <h2>GST Return Due Dates Calendar 2025-26</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Return</th>
+                        <th>Period</th>
+                        <th>Due Date</th>
+                        <th>Applicable To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GSTR-1</td>
+                        <td>Monthly</td>
+                        <td>11th of next month</td>
+                        <td>Turnover > ₹5 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>GSTR-1</td>
+                        <td>Quarterly</td>
+                        <td>13th of month after quarter</td>
+                        <td>QRMP scheme</td>
+                    </tr>
+                    <tr>
+                        <td>GSTR-3B</td>
+                        <td>Monthly</td>
+                        <td>20th of next month</td>
+                        <td>Turnover > ₹5 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>GSTR-3B</td>
+                        <td>Quarterly</td>
+                        <td>22nd/24th after quarter</td>
+                        <td>QRMP scheme</td>
+                    </tr>
+                    <tr>
+                        <td>IFF</td>
+                        <td>Monthly (M1, M2)</td>
+                        <td>13th of next month</td>
+                        <td>QRMP (optional)</td>
+                    </tr>
+                    <tr>
+                        <td>CMP-08</td>
+                        <td>Quarterly</td>
+                        <td>18th after quarter</td>
+                        <td>Composition dealers</td>
+                    </tr>
+                    <tr>
+                        <td>GSTR-9</td>
+                        <td>Annual</td>
+                        <td>December 31st</td>
+                        <td>Turnover > ₹2 Cr</td>
+                    </tr>
+                    <tr>
+                        <td>GSTR-9C</td>
+                        <td>Annual</td>
+                        <td>December 31st</td>
+                        <td>Turnover > ₹5 Cr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Step-by-Step: How to File GSTR-3B</h2>
+        <ol class="step-list">
+            <li>
+                <strong>Login to GST Portal</strong>
+                <p>Go to gst.gov.in, enter GSTIN and password. Navigate to Services > Returns > Returns Dashboard.</p>
+            </li>
+            <li>
+                <strong>Select Return Period</strong>
+                <p>Choose the financial year and month for which you're filing GSTR-3B.</p>
+            </li>
+            <li>
+                <strong>Fill Section 3.1 - Outward Supplies</strong>
+                <p>Enter taxable outward supplies (B2B, B2C), exempt supplies, nil-rated supplies, and inward supplies on RCM.</p>
+            </li>
+            <li>
+                <strong>Fill Section 4 - Input Tax Credit</strong>
+                <p>Enter ITC available from GSTR-2B auto-populated data. Verify and match with your books.</p>
+            </li>
+            <li>
+                <strong>Fill Section 5 - Exempt Supplies</strong>
+                <p>Enter details of exempt, nil-rated, and non-GST supplies made during the period.</p>
+            </li>
+            <li>
+                <strong>Review Tax Computation</strong>
+                <p>System auto-calculates tax liability. Verify CGST, SGST, IGST, and Cess amounts.</p>
+            </li>
+            <li>
+                <strong>Make Payment</strong>
+                <p>If tax is due, create challan and pay via net banking or NEFT/RTGS. Offset using ITC where available.</p>
+            </li>
+            <li>
+                <strong>File Return with DSC/EVC</strong>
+                <p>Submit return using Digital Signature Certificate or Electronic Verification Code via Aadhaar OTP.</p>
+            </li>
+        </ol>
+
+        <div class="warning-box">
+            <h4>⚠️ Late Filing Penalties</h4>
+            <ul>
+                <li><strong>GSTR-1 Late Fee:</strong> ₹50/day (₹25 CGST + ₹25 SGST) | Max ₹10,000</li>
+                <li><strong>GSTR-3B Late Fee:</strong> ₹50/day | Nil returns: ₹20/day | Max ₹10,000</li>
+                <li><strong>Interest:</strong> 18% p.a. on tax due from due date to payment date</li>
+                <li><strong>GSTR-9 Late Fee:</strong> ₹200/day | Max 0.5% of turnover in the state</li>
+            </ul>
+        </div>
+
+        <h2>QRMP Scheme Benefits</h2>
+        <p>Quarterly Return Monthly Payment (QRMP) scheme is available for taxpayers with turnover up to ₹5 crore:</p>
+        <div class="success-box">
+            <h4>✅ QRMP Advantages</h4>
+            <ul>
+                <li>File GSTR-1 and GSTR-3B quarterly instead of monthly</li>
+                <li>Pay tax monthly using PMT-06 challan</li>
+                <li>Use Invoice Furnishing Facility (IFF) to upload B2B invoices monthly (optional)</li>
+                <li>Reduces compliance burden significantly</li>
+            </ul>
+        </div>
+
+        <h2>Common Mistakes to Avoid</h2>
+        <ul>
+            <li><strong>GSTIN Errors:</strong> Double-check customer/vendor GSTIN before filing</li>
+            <li><strong>Invoice Mismatch:</strong> Ensure GSTR-1 matches your books and GSTR-3B</li>
+            <li><strong>ITC Mismatch:</strong> Claim only ITC appearing in GSTR-2B to avoid notices</li>
+            <li><strong>HSN Code Errors:</strong> Use correct 4/6-digit HSN codes as applicable</li>
+            <li><strong>Wrong Tax Rate:</strong> Apply correct GST rate based on HSN/SAC code</li>
+            <li><strong>Missing RCM:</strong> Report reverse charge purchases in GSTR-3B</li>
+            <li><strong>Late Payment:</strong> Pay tax by due date even if return is filed later</li>
+        </ul>
+
+        <div class="cta-box">
+            <h3>Need GST Return Filing Assistance?</h3>
+            <p>Our GST experts ensure timely, accurate filing with ITC reconciliation. Avoid penalties and notices with professional support.</p>
+            <a href="../index.html#contact" class="cta-btn">Get GST Help Now</a>
+        </div>
+    </article>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I file GSTR-3B without filing GSTR-1?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No, from January 2022, GSTR-1 filing is mandatory before GSTR-3B. You cannot file GSTR-3B until GSTR-1 for that period is filed. This ensures consistency between outward supply declarations.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is IFF and when should I use it?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Invoice Furnishing Facility (IFF) is optional for QRMP taxpayers to upload B2B invoices in Month 1 and Month 2 of each quarter. This helps your customers claim ITC immediately instead of waiting for quarterly GSTR-1. It's limited to invoices up to ₹50 lakhs per month.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How do I correct errors in already filed GSTR-1?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>GSTR-1 cannot be revised once filed. Corrections must be made in the next period's GSTR-1 using Amendment tables. For invoices: use Table 9 (B2B amendments) or Table 10 (B2C amendments). For credit/debit notes: issue fresh documents in current period.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What happens if my GSTR-2B shows less ITC than my books?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>This usually means your suppliers haven't uploaded invoices in their GSTR-1. Steps: (1) Contact supplier to file/amend GSTR-1, (2) Claim only GSTR-2B ITC in GSTR-3B to avoid notices, (3) Claim balance ITC once it appears in future GSTR-2B, (4) Keep purchase records for audit.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is GSTR-9 (annual return) mandatory for all taxpayers?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>GSTR-9 is mandatory only for taxpayers with aggregate turnover exceeding ₹2 crore. Below this threshold, it's optional but recommended for reconciliation. Composition dealers file GSTR-9A instead. GSTR-9C (reconciliation statement) is required for turnover > ₹5 crore.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I claim ITC on invoices from previous financial years?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>As per Section 16(4), ITC for any invoice can be claimed until the earlier of: (1) November 30th of next financial year, or (2) Date of filing annual return for that year. Example: For FY 2024-25 invoices, claim ITC by November 30, 2025, or annual return date, whichever is earlier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">K A R V <span>& Associates LLP</span></div>
+        <div class="footer-subtitle">Chartered Accountants</div>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pages/team.html">Team</a>
+            <a href="../blogs.html">Blogs</a>
+            <a href="../index.html#contact">Contact Us</a>
+        </div>
+        <p class="footer-copy">© 2026 K A R V & Associates LLP. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
