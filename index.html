@@ -860,6 +860,73 @@
             opacity: 0.7;
         }
 
+        /* Due Dates & Updates Section */
+        .updates-section {
+            background: #fff;
+            padding: 80px 40px;
+        }
+        .updates-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .updates-box {
+            background: #faf9f7;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .updates-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c9a227;
+        }
+        .due-date-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .due-date-item:last-child {
+            border-bottom: none;
+        }
+        .due-date-item .date {
+            font-weight: 600;
+            color: #c9a227;
+            white-space: nowrap;
+        }
+        .due-date-item .desc {
+            color: #666;
+            text-align: right;
+        }
+        .update-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .update-item:last-child {
+            border-bottom: none;
+        }
+        .update-item .update-date {
+            font-size: 12px;
+            color: #c9a227;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .update-item .update-title {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .update-item .update-desc {
+            color: #666;
+            font-size: 14px;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .about-container,
@@ -992,6 +1059,13 @@
             .highlight-box p {
                 font-size: 15px;
             }
+            .updates-container {
+                grid-template-columns: 1fr;
+            }
+            .updates-box {
+                padding: 25px;
+            }
+            }
             .footer-links {
                 gap: 20px;
             }
@@ -1060,13 +1134,13 @@
     <!-- Hero Section with Slider -->
     <section class="hero" id="home">
         <div class="hero-slider">
-            <div class="hero-slide active"><img src="img/slider1.jpg" alt="Professional Services"></div>
-            <div class="hero-slide"><img src="img/slider2.jpg" alt="Financial Advisory"></div>
-            <div class="hero-slide"><img src="img/slider3.jpg" alt="Tax Consulting"></div>
+            <div class="hero-slide active"><img src="img/chartered-accountants-india-office.jpg" alt="Best Chartered Accountants in India - K A R V & Associates Office"></div>
+            <div class="hero-slide"><img src="img/tax-audit-services-india.jpg" alt="Income Tax and Audit Services India - Professional CA Firm"></div>
+            <div class="hero-slide"><img src="img/gst-filing-consultation-india.jpg" alt="GST Filing and Consultation Services in Delhi NCR"></div>
         </div>
         <div class="hero-content">
             <p class="hero-tagline">Chartered Accountants · Tax & Financial Advisory</p>
-            <h1>Bringing clarity to your finances—so you can focus on what matters.</h1>
+            <h1>Chartered Accountants in India | GST, Tax Filing & Audit Services</h1>
             <p>Expert tax planning, audit services, and financial guidance for businesses and individuals across India. We make the complex simple.</p>
             <a href="#contact" class="btn">Get in Touch</a>
             <a href="#services" class="btn btn-outline">Our Services</a>
@@ -1116,6 +1190,57 @@
             <div class="stat-item">
                 <h3>10+</h3>
                 <p>Cities Covered</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Due Dates & Tax Updates Section -->
+    <section class="updates-section" id="updates">
+        <div class="updates-container">
+            <div class="updates-box">
+                <h3>📅 Important Due Dates</h3>
+                <div class="due-date-item">
+                    <span class="date">7th Every Month</span>
+                    <span class="desc">TDS/TCS Payment</span>
+                </div>
+                <div class="due-date-item">
+                    <span class="date">11th Every Month</span>
+                    <span class="desc">GSTR-1 Filing</span>
+                </div>
+                <div class="due-date-item">
+                    <span class="date">13th Every Month</span>
+                    <span class="desc">GSTR-1 (QRMP)</span>
+                </div>
+                <div class="due-date-item">
+                    <span class="date">20th Every Month</span>
+                    <span class="desc">GSTR-3B Filing</span>
+                </div>
+                <div class="due-date-item">
+                    <span class="date">31st July</span>
+                    <span class="desc">ITR Filing (Non-Audit)</span>
+                </div>
+                <div class="due-date-item">
+                    <span class="date">31st Oct</span>
+                    <span class="desc">ITR Filing (Audit Cases)</span>
+                </div>
+            </div>
+            <div class="updates-box">
+                <h3>📢 Latest Tax Updates</h3>
+                <div class="update-item">
+                    <div class="update-date">January 2026</div>
+                    <div class="update-title">New TDS Rates Effective</div>
+                    <div class="update-desc">Updated TDS rates for FY 2025-26 now applicable. <a href="pages/tax-services.html">Learn more</a></div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">January 2026</div>
+                    <div class="update-title">GST Annual Return Due</div>
+                    <div class="update-desc">GSTR-9/9C for FY 2024-25 due by 31st Dec. <a href="pages/gst-services.html">File Now</a></div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">December 2025</div>
+                    <div class="update-title">Advance Tax - Q3 Deadline</div>
+                    <div class="update-desc">Third installment of advance tax was due 15th Dec. <a href="pages/tax-services.html">Check liability</a></div>
+                </div>
             </div>
         </div>
     </section>
@@ -1198,7 +1323,7 @@
                 </ul>
             </div>
             <div class="why-image">
-                <img src="img/slider1.jpg" alt="Professional Consultancy">
+                <img src="img/chartered-accountants-india-office.jpg" alt="Professional CA Consultancy Services in India">
                 <div class="why-image-overlay">
                     <p class="why-image-title">Professional Consultancy</p>
                 </div>
