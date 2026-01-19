@@ -876,6 +876,7 @@
             background: #faf9f7;
             padding: 30px;
             border-radius: 8px;
+            overflow: hidden;
         }
         .updates-box h3 {
             font-family: 'Playfair Display', serif;
@@ -885,6 +886,46 @@
             padding-bottom: 15px;
             border-bottom: 2px solid #c9a227;
         }
+        
+        /* Scrolling Animation Container */
+        .scroll-wrapper {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        .scroll-wrapper::before,
+        .scroll-wrapper::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 30px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .scroll-wrapper::before {
+            top: 0;
+            background: linear-gradient(to bottom, #faf9f7, transparent);
+        }
+        .scroll-wrapper::after {
+            bottom: 0;
+            background: linear-gradient(to top, #faf9f7, transparent);
+        }
+        .scroll-content {
+            animation: scrollUp 25s linear infinite;
+        }
+        .scroll-wrapper:hover .scroll-content {
+            animation-play-state: paused;
+        }
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+        
         .due-date-item {
             display: flex;
             justify-content: space-between;
@@ -1200,47 +1241,158 @@
         <div class="updates-container">
             <div class="updates-box">
                 <h3>📅 Important Due Dates</h3>
-                <div class="due-date-item">
-                    <span class="date">7th Every Month</span>
-                    <span class="desc">TDS/TCS Payment</span>
-                </div>
-                <div class="due-date-item">
-                    <span class="date">11th Every Month</span>
-                    <span class="desc">GSTR-1 Filing</span>
-                </div>
-                <div class="due-date-item">
-                    <span class="date">13th Every Month</span>
-                    <span class="desc">GSTR-1 (QRMP)</span>
-                </div>
-                <div class="due-date-item">
-                    <span class="date">20th Every Month</span>
-                    <span class="desc">GSTR-3B Filing</span>
-                </div>
-                <div class="due-date-item">
-                    <span class="date">31st July</span>
-                    <span class="desc">ITR Filing (Non-Audit)</span>
-                </div>
-                <div class="due-date-item">
-                    <span class="date">31st Oct</span>
-                    <span class="desc">ITR Filing (Audit Cases)</span>
+                <div class="scroll-wrapper">
+                    <div class="scroll-content">
+                        <div class="due-date-item">
+                            <span class="date">7th Every Month</span>
+                            <span class="desc">TDS/TCS Payment</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">11th Every Month</span>
+                            <span class="desc">GSTR-1 Filing</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">13th Every Month</span>
+                            <span class="desc">GSTR-1 (QRMP)</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">20th Every Month</span>
+                            <span class="desc">GSTR-3B Filing</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">31st July</span>
+                            <span class="desc">ITR Filing (Non-Audit)</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">31st Oct</span>
+                            <span class="desc">ITR Filing (Audit Cases)</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">15th Mar</span>
+                            <span class="desc">Advance Tax (Q4)</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">31st Dec</span>
+                            <span class="desc">GSTR-9 Annual Return</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">30th Sep</span>
+                            <span class="desc">Tax Audit Report</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">15th Jun</span>
+                            <span class="desc">Advance Tax (Q1)</span>
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="due-date-item">
+                            <span class="date">7th Every Month</span>
+                            <span class="desc">TDS/TCS Payment</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">11th Every Month</span>
+                            <span class="desc">GSTR-1 Filing</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">13th Every Month</span>
+                            <span class="desc">GSTR-1 (QRMP)</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">20th Every Month</span>
+                            <span class="desc">GSTR-3B Filing</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">31st July</span>
+                            <span class="desc">ITR Filing (Non-Audit)</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">31st Oct</span>
+                            <span class="desc">ITR Filing (Audit Cases)</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">15th Mar</span>
+                            <span class="desc">Advance Tax (Q4)</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">31st Dec</span>
+                            <span class="desc">GSTR-9 Annual Return</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">30th Sep</span>
+                            <span class="desc">Tax Audit Report</span>
+                        </div>
+                        <div class="due-date-item">
+                            <span class="date">15th Jun</span>
+                            <span class="desc">Advance Tax (Q1)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="updates-box">
                 <h3>📢 Latest Tax Updates</h3>
-                <div class="update-item">
-                    <div class="update-date">January 2026</div>
-                    <div class="update-title">New TDS Rates Effective</div>
-                    <div class="update-desc">Updated TDS rates for FY 2025-26 now applicable. <a href="pages/tax-services.html">View Income Tax Services</a></div>
-                </div>
-                <div class="update-item">
-                    <div class="update-date">January 2026</div>
-                    <div class="update-title">GST Annual Return Due</div>
-                    <div class="update-desc">GSTR-9/9C for FY 2024-25 due by 31st Dec. <a href="pages/gst-services.html">GST Filing Services</a></div>
-                </div>
-                <div class="update-item">
-                    <div class="update-date">December 2025</div>
-                    <div class="update-title">Advance Tax - Q3 Deadline</div>
-                    <div class="update-desc">Third installment of advance tax was due 15th Dec. <a href="pages/tax-services.html">Tax Planning Services</a></div>
+                <div class="scroll-wrapper">
+                    <div class="scroll-content">
+                        <div class="update-item">
+                            <div class="update-date">January 2026</div>
+                            <div class="update-title">Budget 2025: Tax-Free up to ₹12L</div>
+                            <div class="update-desc">New regime now offers zero tax for income up to ₹12 lakhs with ₹60,000 rebate.</div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">January 2026</div>
+                            <div class="update-title">New Tax Slabs Effective</div>
+                            <div class="update-desc">7 revised slabs under new regime: 0%, 5%, 10%, 15%, 20%, 25%, 30%.</div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">January 2026</div>
+                            <div class="update-title">Standard Deduction Increased</div>
+                            <div class="update-desc">Standard deduction raised to ₹75,000 for salaried under new regime.</div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">December 2025</div>
+                            <div class="update-title">GST Annual Return Due</div>
+                            <div class="update-desc">GSTR-9/9C for FY 2024-25 due by 31st Dec. <a href="pages/gst-services.html">GST Services</a></div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">December 2025</div>
+                            <div class="update-title">Advance Tax - Q3 Deadline</div>
+                            <div class="update-desc">Third installment of advance tax was due 15th Dec.</div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">November 2025</div>
+                            <div class="update-title">TDS Rate Changes</div>
+                            <div class="update-desc">New TDS threshold limits effective from FY 2025-26.</div>
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="update-item">
+                            <div class="update-date">January 2026</div>
+                            <div class="update-title">Budget 2025: Tax-Free up to ₹12L</div>
+                            <div class="update-desc">New regime now offers zero tax for income up to ₹12 lakhs with ₹60,000 rebate.</div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">January 2026</div>
+                            <div class="update-title">New Tax Slabs Effective</div>
+                            <div class="update-desc">7 revised slabs under new regime: 0%, 5%, 10%, 15%, 20%, 25%, 30%.</div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">January 2026</div>
+                            <div class="update-title">Standard Deduction Increased</div>
+                            <div class="update-desc">Standard deduction raised to ₹75,000 for salaried under new regime.</div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">December 2025</div>
+                            <div class="update-title">GST Annual Return Due</div>
+                            <div class="update-desc">GSTR-9/9C for FY 2024-25 due by 31st Dec. <a href="pages/gst-services.html">GST Services</a></div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">December 2025</div>
+                            <div class="update-title">Advance Tax - Q3 Deadline</div>
+                            <div class="update-desc">Third installment of advance tax was due 15th Dec.</div>
+                        </div>
+                        <div class="update-item">
+                            <div class="update-date">November 2025</div>
+                            <div class="update-title">TDS Rate Changes</div>
+                            <div class="update-desc">New TDS threshold limits effective from FY 2025-26.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
